@@ -54,7 +54,7 @@ def etl_web_to_gcs(color: str, year: int, month: int):
     Main ETL flow to extract data from a web source, transform it, and load it into Google Cloud Storage.
     """
     dataset_file = f"{color}_tripdata_{year}-{month:02d}"
-    dataset_url = f'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/{dataset_file}.csv.gz'
+    dataset_url = f'https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz'
 
     df = fetch(dataset_url)
     df = clean(df)
