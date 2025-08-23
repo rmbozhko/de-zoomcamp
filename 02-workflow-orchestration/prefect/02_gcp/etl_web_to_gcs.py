@@ -37,6 +37,7 @@ def write_local(df: pd.DataFrame, dataset_file: str) -> Path:
     path = Path(f"data/{dataset_file}.parquet")
     path.parent.mkdir(parents=True, exist_ok=True)
     df.to_parquet(path, compression='gzip')
+    print(f"Data written to {path}")
     
     return path
 
@@ -63,6 +64,7 @@ def etl_web_to_gcs(color: str, year: int, month: int):
     df = fetch(dataset_url)
     df = clean(df)
     print(df.head(n=10))
+    print(f"Number of rows in DataFrame: {len(df)}")
     path = write_local(df, dataset_file)
     write_gcs(path)
     print(f"Data written to {path}")
