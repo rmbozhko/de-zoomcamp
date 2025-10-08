@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  # name attribute encapsulates the underlaying system which has the tables below.
+  # We could change to posgtes db and schema and if the mentioned below tables exist there, 
+  # then everything is going to run smoothly.
+  - name: staging 
+    database: turnkey-banner-469014-v5
+    schema: demo_dataset
+
+    tables:
+      - name: green_tripdata
+      - name: yellow_tripdata
