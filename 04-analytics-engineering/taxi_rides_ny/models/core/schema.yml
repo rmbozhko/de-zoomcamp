@@ -179,7 +179,7 @@ models:
 
   - name: dim_zones
     description: >
-      List of unique zones idefied by locationid. 
+      List of unique zones identified by locationid. 
       Includes the service zone they correspond to (Green or yellow).
     columns:
       - name: locationid
